@@ -15,9 +15,31 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { FaFacebook, FaGoogle, FaTwitter, FaAmazon } from "react-icons/fa";
+import Image1 from "../assets/facebook.png";
+import Image2 from "../assets/twitter.png";
+import Image3 from "../assets/google.png";
+import Image4 from "../assets/amazon.png";
+import {useState} from 'react';
+// import { FaFacebook, FaGoogle, FaTwitter, FaAmazon } from "react-icons/fa";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    
+    // Perform login logic here
+    if (email && password) {
+      console.log("Login successful!");
+    } else {
+      console.log("Please enter email and password");
+    }
+    
+    // Reset the form
+    setEmail("");
+    setPassword("");
+  };
   return (
     <Box>
       <Heading as="h2" fontWeight="300" fontSize="20px" letterSpacing="-0.2px">
@@ -27,11 +49,19 @@ const Login = () => {
       <br />
       <Center>
         <Flex>
-          <HStack gap="50px">
-            <FaFacebook size="25px" />
-            <FaGoogle size="25px" />
-            <FaTwitter size="25px" />
-            <FaAmazon size="25px" />
+          <HStack spacing="20" >
+            <button  className='Social'>
+              <img src={Image1} alt="" />
+            </button>
+            <button className='Social'>
+              <img src={Image2} alt="" />
+            </button>
+            <button className='Social'>
+              <img src={Image3} alt="" />
+            </button>
+            <button className='Social'>
+              <img src={Image4} alt="" />
+            </button>
           </HStack>
         </Flex>
       </Center>
@@ -48,28 +78,37 @@ const Login = () => {
                     <Input
                       type="text"
                       placeholder="E-mail"
+                      required 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       w="100%"
                       bg="white"
                       borderColor="#d8dee4"
                       size="lg"
                       padding="10px"
                       borderRadius="30px"
+                      
                     />
                   </FormControl>
                   <FormControl marginBottom="10px">
                     <Input
                       type="password"
                       placeholder="Password"
+                      required 
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       w="100%"
                       bg="white"
                       borderColor="#d8dee4"
                       size="lg"
                       padding="10px"
                       borderRadius="30px"
+                    
                     />
-                  </FormControl>{" "}
+                  </FormControl>
                   <HStack justifyContent="end">
                     <Button
+                      className="fp"
                       as="a"
                       href="#"
                       variant="link"
@@ -85,6 +124,7 @@ const Login = () => {
                   </HStack>
                   <br />
                   <Button
+                    className="login"
                     bg="#161616"
                     color="white"
                     width="105%"
@@ -92,6 +132,8 @@ const Login = () => {
                     borderRadius="30px"
                     size="lg"
                     fontSize="15"
+                    onClick={handleLogin}
+                    cursor='pointer'
                   >
                     Log in
                   </Button>
@@ -116,12 +158,20 @@ const Login = () => {
 
       <Center as="footer" mt="16">
         <HStack spacing="4" pt="2">
-          <Link isExternal color="#515151" href="#" fontSize="xs">
+          <Link
+            className="fp"
+            isExternal
+            color="#515151"
+            href="/signup"
+            fontSize="xs"
+          >
             Don’t have an account?
           </Link>
         </HStack>
       </Center>
+   
     </Box>
+   
   );
 };
 
