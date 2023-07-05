@@ -1,1 +1,1 @@
-# Handsanitizer-Clone
+# Handsanitizer
