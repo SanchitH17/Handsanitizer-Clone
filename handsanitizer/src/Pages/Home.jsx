@@ -15,6 +15,12 @@ import icon3 from "../assets/fresh-scents_2x_b1477341-83a5-4a54-ad34-c4ce5e16324
 import icon4 from "../assets/group_3x_50d0fb7a-4fc8-4be3-9df9-5d7d99539f9e@2x.png";
 import icon5 from "../assets/recyclable_2x_df5cfdc4-8365-4655-a4b3-daf979145779@2x.png";
 import icon6 from "../assets/group_3x_81e5229c-087e-44d9-87fa-a8588fc3f21b.png";
+import btmIcon1 from "../assets/btmIcon-1.png"
+import btmIcon2 from "../assets/btmIcon-2.jpg"
+import btmIcon3 from "../assets/btmIcon-3.jpg"
+import btmIcon4 from "../assets/btmIcon-4.jpg"
+import btmIcon5 from "../assets/bmtIcon-5.jpg"
+ 
 
 function Home(props) {
   let [products, setProduct] = useState([]);
@@ -71,11 +77,11 @@ function Home(props) {
       />
 
       <Flex justifyContent={"center"} alignItems={"center"}>
-        <IconPage text="Clean Ingredients" icon={icon1} isSingle={false}/>
-        <IconPage text="Prebiotic Complex" icon={icon2} isSingle={false}/>
-        <IconPage text="Fresh Scents" icon={icon3} isSingle={false}/>
-        <IconPage text="Ready to Refill" icon={icon4} isSingle={false}/>
-        <IconPage text="Recyclable" icon={icon5}isSingle={false} />
+        <IconPage text="Clean Ingredients" icon={icon1} isSingle={false} />
+        <IconPage text="Prebiotic Complex" icon={icon2} isSingle={false} />
+        <IconPage text="Fresh Scents" icon={icon3} isSingle={false} />
+        <IconPage text="Ready to Refill" icon={icon4} isSingle={false} />
+        <IconPage text="Recyclable" icon={icon5} isSingle={false} />
       </Flex>
 
       <Feature
@@ -88,7 +94,11 @@ function Home(props) {
         dir={true}
       />
 
-      <IconPage text="We support clean water projects" isSingle={true}icon={icon6} />
+      <IconPage
+        text="We support clean water projects"
+        isSingle={true}
+        icon={icon6}
+      />
       <Feature
         name=""
         title="Our purpose"
@@ -99,6 +109,41 @@ function Home(props) {
         image={img3}
         dir={false}
       />
+
+      <Flex flexDir={"column"} alignItems={"center"}>
+         <Flex> 
+          <IconPage
+            text=""
+            icon={btmIcon1}
+            isSingle={false}
+          />
+          
+          <IconPage
+            text=""
+            icon={btmIcon2}
+            isSingle={false}
+          />
+          <IconPage
+            text=""
+            icon={btmIcon3}
+            isSingle={false}
+          />
+          <IconPage
+            text=""
+            icon={btmIcon4}
+            isSingle={false}
+          />
+          <IconPage
+            text=""
+            icon={btmIcon5}
+            isSingle={false}
+          />
+         
+        </Flex>
+        <Text textAlign={"center"} width={"40%"}>“Never have hand sanitizers been so necessary in our lives. If they can be sustainable, beautiful and handy like HAAN Pockets are, it’s just a lovely plus.”</Text>
+
+        
+      </Flex>
     </div>
   );
 }

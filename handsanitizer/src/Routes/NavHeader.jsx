@@ -63,7 +63,7 @@ function NavHeader(props) {
                 Countries
               </Button>
             </PopoverTrigger>
-            <PopoverContent>
+            <PopoverContent bg={"white"} p={"25px"}>
               <PopoverArrow />
               <Flex gap="65px">
                 <PopoverHeader>SHIPPING COUNTRY</PopoverHeader>
