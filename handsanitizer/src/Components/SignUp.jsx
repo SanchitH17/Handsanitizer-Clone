@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -13,10 +13,48 @@ import {
   Stack,
   Text,
   VStack,
-  Checkbox,
 } from "@chakra-ui/react";
 
 const SignUp = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+  
+    if (!firstName || !lastName || !email || !password || !privacyAccepted) {
+      alert("Please fill in all fields and accept the privacy policy.");
+      return;
+    }
+  
+    const user = {
+      firstName,
+      lastName,
+      email,
+      password
+    };
+  
+    // Convert user object to JSON string
+    const userJSON = JSON.stringify(user);
+  
+    // Store the user details in local storage
+    localStorage.setItem("user", userJSON);
+  
+    alert("User signed up successfully!");
+  
+    // Reset the form fields
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setPrivacyAccepted(false);
+  };
+  
+
   return (
     <Box>
       <Heading as="h2" fontWeight="300" fontSize="20px" letterSpacing="-0.2px">
@@ -30,7 +68,7 @@ const SignUp = () => {
           <VStack as="header" spacing="6" mt="8"></VStack>
           <Card w="400px">
             <CardBody>
-              <form>
+              <form onSubmit={handleSignUp}>
                 <Stack spacing="4">
                   <FormControl marginBottom="10px">
                     <Input
@@ -42,6 +80,8 @@ const SignUp = () => {
                       size="lg"
                       padding="10px"
                       borderRadius="30px"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                     />
                   </FormControl>
                   <FormControl marginBottom="10px">
@@ -54,6 +94,8 @@ const SignUp = () => {
                       size="lg"
                       padding="10px"
                       borderRadius="30px"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
                     />
                   </FormControl>
                   <FormControl marginBottom="10px">
@@ -66,6 +108,8 @@ const SignUp = () => {
                       size="lg"
                       padding="10px"
                       borderRadius="30px"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </FormControl>
                   <FormControl marginBottom="10px">
@@ -78,15 +122,22 @@ const SignUp = () => {
                       size="lg"
                       padding="10px"
                       borderRadius="30px"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </FormControl>
                   <label>
-                  <input type="checkbox"/>  I have read and I accept the privacy policy
+                    <input
+                      type="checkbox"
+                      checked={privacyAccepted}
+                      onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                    />
+                    I have read and I accept the privacy policy
                   </label>
-                  
 
                   <br />
                   <Button
+                    type="submit"
                     bg="#B8B8B8"
                     border="none"
                     color="white"
@@ -111,7 +162,7 @@ const SignUp = () => {
             className="fp"
             isExternal
             color="#515151"
-            href="/signup"
+            to="/login"
             fontSize="xs"
           >
             Already registered? Log in!
@@ -123,3 +174,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+

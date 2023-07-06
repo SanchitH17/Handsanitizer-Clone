@@ -2,6 +2,10 @@ import React from 'react';
 import { Box, Heading, Text, Center, Flex, HStack, FormControl, Input, Button, Stack, VStack, Card, CardBody, Link } from '@chakra-ui/react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import Image1 from "../assets/facebook.png";
+import Image2 from "../assets/twitter.png";
+import Image3 from "../assets/google.png";
+import Image4 from "../assets/amazon.png";
 
 
 
@@ -20,8 +24,17 @@ const Login1 = () => {
 
   // Handle form submission
   const handleSubmit = (values, { setSubmitting }) => {
-    // Perform login logic here
-    console.log('Login successful!', values);
+    // Retrieve user details from local storage
+    const storedUserJSON = localStorage.getItem('user');
+    const storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : null;
+
+    if (storedUser && storedUser.email === values.email && storedUser.password === values.password) {
+      alert('Login successful!');
+      // Redirect to homepage
+      window.location.href = '/homepage';
+    } else {
+      alert('Invalid email or password');
+    }
 
     // Reset the form
     setSubmitting(false);
@@ -37,7 +50,24 @@ const Login1 = () => {
       <Center>
         <Flex>
           <HStack spacing="20">
-            {/* Icons or images for social login buttons */}
+          <Center>
+        <Flex>
+          <HStack spacing="20" >
+            <button  className='Social'>
+              <img src={Image1} alt="" />
+            </button>
+            <button className='Social'>
+              <img src={Image2} alt="" />
+            </button>
+            <button className='Social'>
+              <img src={Image3} alt="" />
+            </button>
+            <button className='Social'>
+              <img src={Image4} alt="" />
+            </button>
+          </HStack>
+        </Flex>
+      </Center>
           </HStack>
         </Flex>
       </Center>
@@ -146,7 +176,7 @@ const Login1 = () => {
 
       <Center as="footer" mt="16">
         <HStack spacing="4" pt="2">
-          <Link className="fp" isExternal color="#515151" href="#" fontSize="xs">
+          <Link className="fp" isExternal color="#515151" to='/signup' fontSize="xs">
             Don’t have an account?
           </Link>
         </HStack>
