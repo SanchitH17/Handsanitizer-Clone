@@ -1,10 +1,13 @@
-import './App.css';
+ 
 import Navabar from './Routes/Navabar';
+import Home from "./Pages/Home"
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <Navabar />
+     <Home />
+   
     </div>
   );
 }

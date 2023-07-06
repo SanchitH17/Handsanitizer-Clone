@@ -1,19 +1,84 @@
 {
-  "posts": [
+  "products": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 3,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 4,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 5,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 6,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 7,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 8,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 9,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
+    },
+    {
+      "id": 10,
+      "title": "From Alaska To Ibiza",
+      "price1": "39,90€",
+      "price2": "54,40€",
+      "image":"https://cdn.shopify.com/s/files/1/0511/9066/1293/products/FromAlaskaIbiza_2_OK_360x.jpg?v=1681314614"
+
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

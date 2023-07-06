@@ -1,0 +1,80 @@
+.home {
+
+    background-image: url("../../assets/ALALALA.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin-top: 150px;
+}
+
+.h {
+    font-size: 60px;
+    line-height: .98;
+    letter-spacing: -.1px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.title {
+    max-width: 481px;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: auto;
+    width: 100%;
+    margin-left: 4%;
+    margin-top: 5%;
+
+
+
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.homeBtn {
+    border-color: #000000;
+    color: #ffffff;
+    background-color: #000000;
+
+    border-radius: 50px;
+    padding: 12px 80px 14px;
+    font-size: 16px;
+    letter-spacing: -.08px;
+    text-transform: initial;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+@media (max-width:450px) {
+    .title {
+        max-width: 250px;
+        margin-top: 75%;
+    }
+
+    .h {
+        font-size: 30px;
+
+        margin: 0;
+    }
+
+    .home {
+        background-image: url("../../assets/n.webp");
+
+        background-position: center top;
+
+        height: 488px;
+    }
+
+    .homeBtn {
+        padding: 8px 40px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:1100px){
+    .title {
+        margin-top: 30%;
+    }
+}

@@ -1,15 +1,33 @@
 
-
-
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background:white;
+  z-index: 2;
+}
+.navbar{
+  /* display: flex; */
+  text-align: center;
+}
 .link{
   text-decoration: none;
   color: #000000;
+  cursor: pointer;
+}
+
+.link:hover, .btns:hover{
+  text-decoration: underline;
+}
+.btns{
+  border:none;
+   background: none; 
+  cursor:pointer;
 }
 .menuItems.open {
-    flex-direction: column;
     width: 100%;
-    align-items: center;
-    margin-top: 50px;
+    
+    margin-top: 15px;
   }
 
   .menuItems {
@@ -24,13 +42,27 @@
     display: none;
 }
 
+.list{
+  background: white;
+  padding:15px;
+}
+
 @media (max-width:749px){
 
     .toggleButton{
         display: block;
+        top :60px;
+        position: fixed;
+        border: none;
+        background: none;
+        font-size: 25px;
+
     }
     .open {
         display: none;
+        
       }
+      
+      
     
 }

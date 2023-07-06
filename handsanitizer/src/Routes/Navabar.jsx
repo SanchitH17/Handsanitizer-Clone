@@ -3,10 +3,11 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "../Components/CSS/navbar.css";
-import { Button, Flex, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { Button, Flex, Menu, MenuButton, MenuList, Link } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import NavHeader from "./NavHeader";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
 
 function Navabar(props) {
   let [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,66 +16,82 @@ function Navabar(props) {
   };
 
   return (
-    <>
+    <div className="header">
     <NavHeader />
       <header className={`navbar ${isMenuOpen ? "menuOpen" : ""}`}>
         <div className={`menuItems ${isMenuOpen ? "" : "open"}`}>
+          {/* 1st menu */}
+
+
           <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} className="btns">
               Shop
             </MenuButton>
 
-            <MenuList>
+            <MenuList className="list">
               <Flex flexDir={"column"} textAlign={"left"}>
 
               <h5>Skin Care</h5>
-              <Link>Face Cleanser</Link>
-              <Link>Face Cream</Link>
-              <Link>Face Serum</Link>
-              <Link>Packs Skin Care</Link>
+              <Link   href="#"   className="link">Face Cleanser</Link>
+              <Link className="link">Face Cream</Link>
+              <Link className="link">Face Serum</Link>
+              <Link className="link">Packs Skin Care</Link>
               </Flex>
 
             </MenuList>
           </Menu>
+
+
+          {/* 2nd menu list */}
+
+
           <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} className="btns">
             Collection
             </MenuButton>
 
-            <MenuList>
+            <MenuList className="list">
               <Flex flexDir={"column"} textAlign={"left"}>
 
               
-              <Link>Travel</Link>
-              <Link>Sun Care</Link>
-              <Link>Sets</Link>
+              <Link className="link">Travel</Link>
+              <Link className="link">Sun Care</Link>
+              <Link className="link">Sets</Link>
                
               </Flex>
 
             </MenuList>
           </Menu>
+
+          {/* 3rd menu list */}
+
+
           <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} className="btns">
             About Us
             </MenuButton>
 
-            <MenuList>
+            <MenuList className="list">
               <Flex flexDir={"column"} textAlign={"left"}>
 
               
-              <Link>Who We Are</Link>
-              <Link>Purpose</Link>
-              <Link>Affiliate</Link>
-              <Link>Contact</Link>
+              <Link className="link">Who We Are</Link>
+              <Link className="link">Purpose</Link>
+              <Link className="link">Affiliate</Link>
+              <Link className="link">Contact</Link>
                
               </Flex>
 
             </MenuList>
           </Menu>
-          <Link>Sobremesa Talks</Link>
+
+          {/* 4th link */}
+
+
+          <Link className="link">Sobremesa Talks</Link>
         </div>
 
-        <button className="toggleButton" onClick={toggleButton}>
+        <button className="toggleButton" onClick={toggleButton} >
           {isMenuOpen ? (
             <FontAwesomeIcon icon={faXmark} />
           ) : (
@@ -82,7 +99,7 @@ function Navabar(props) {
           )}
         </button>
       </header>
-    </>
+    </div>
   );
 }
 

@@ -16,7 +16,6 @@ import {
   MenuList,
   MenuItem,
   Button,
- 
 } from "@chakra-ui/react";
 
 import {
@@ -31,26 +30,38 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function NavHeader(props) {
-  let [isMedia] = useMediaQuery("(max-width: 440px)");
+  let [isMedia] = useMediaQuery("(max-width: 450px)");
+  let [isLeft] = useMediaQuery("(max-width: 750px)");
 
   return (
     <>
+      {/* Announcement bar */}
       <Flex
         flexDir={isMedia && "column"}
         bg={"#c1ddc6"}
         p={"2.5px"}
         justifyContent={"center"}
         gap={isMedia ? "5px" : "50px"}
+        textAlign={"center"}
       >
         <Link className="link">Free shipping over 35 €</Link>
         <Link className="link">Subscribe to our Newsletter</Link>
       </Flex>
 
-      <Flex justifyContent={"space-between"}>
-        <Flex>
+      {/* nav header */}
+
+      <Flex justifyContent={ isLeft ? "space-evenly":"space-between"} alignItems={"center"}  padding={"30px"} pb={"0"}>
+        <Flex display={isLeft && "none"}>
+          {/* 1st menu */}
           <Popover>
             <PopoverTrigger>
-              <Button rightIcon={<ChevronDownIcon />}>Trigger</Button>
+              <Button
+                rightIcon={<ChevronDownIcon />}
+                border={"none"}
+                background="none"
+              >
+                Countries
+              </Button>
             </PopoverTrigger>
             <PopoverContent>
               <PopoverArrow />
@@ -68,8 +79,14 @@ function NavHeader(props) {
             </PopoverContent>
           </Popover>
 
+          {/* 2nd menu */}
           <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              border={"none"}
+              background="none"
+            >
               EN
             </MenuButton>
 
@@ -82,22 +99,38 @@ function NavHeader(props) {
             </MenuList>
           </Menu>
 
-          <Link>
-            <FontAwesomeIcon icon={faUser} />
+          {/* User Account */}
+
+
+          <Link >
+            <FontAwesomeIcon icon={faUser} color="black"/>
           </Link>
         </Flex>
-        <Link>
-          <Image src={logo} />
+
+
+        {/* Logo */}
+        <Link >
+          <Image src={logo} color="black" width={"150px"} />
         </Link>
-        <Flex>
-         <FontAwesomeIcon icon={faMagnifyingGlass} />
+
+
+        {/* Right side Search  and Account */}
+
+
+        <Flex alignItems={"center"} gap = "15px">
+
+          <FontAwesomeIcon icon={faMagnifyingGlass} color="black"/>
           <Link>
-            <FontAwesomeIcon icon={faHeart} />
+            <FontAwesomeIcon icon={faHeart} color="black"/>
           </Link>
+
           <Link>
-            <FontAwesomeIcon icon={faBagShopping} />
+            <FontAwesomeIcon icon={faBagShopping} color="black" />
           </Link>
+
         </Flex>
+
+
       </Flex>
     </>
   );
