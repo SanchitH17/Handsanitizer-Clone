@@ -27,7 +27,7 @@ function Home(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/products`)
+      .get(`https://sanitizer-5qvt.onrender.com/products`)
       .then((res) => {
         setProduct(res.data);
         console.log("geting product", res.data);

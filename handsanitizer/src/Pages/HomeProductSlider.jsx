@@ -26,7 +26,7 @@ const HomeProductSlider = ({ products, isLoading }) => {
       <button className="pre-btn" onClick={btnPressPrev}>
         <p>&lt;</p>
       </button>
-      <Text>Gift Sets</Text>
+      <Text fontWeight={"500"}>Gift Sets</Text>
       <button className="next-btn" onClick={btnPressNext}>
         <p>&gt;</p>
       </button>
@@ -35,14 +35,14 @@ const HomeProductSlider = ({ products, isLoading }) => {
       <div className="product-container" ref={productContainerRef}>
         {products.length > 0 &&
           products.map((element, index) => (
-            <div key={index} className="product-item">
-              <Image src={element.image} width={"75%"}  />
-              <Text>{element.title}</Text>
+            <div key={index} className="product-item" >
+              <Image src={element.image1} width={"22%"} height={"115px"} pt={"10px"} />
+              <Text fontWeight={"500"}>{element.brand}</Text>
               <Text>
-                {element.price1}{" "}
-                <span className="crossed-line">{element.price2}</span>
+                {element.price}{"€ "}
+                <span className="crossed-line">{element.discountedPrice}€</span>
               </Text>
-              <button className="button">Add to cart</button>
+              <button className="button" >Add to cart</button>
             </div>
           ))}
       </div>

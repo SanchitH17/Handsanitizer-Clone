@@ -16,12 +16,14 @@
 .navbar{
   /* display: flex; */
   text-align: center;
+  padding-bottom: 15px;
 }
 .link{
   text-decoration: none;
   color: #000000;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
+  margin: 5px 0;
 }
 
 .link:hover, .btns:hover{

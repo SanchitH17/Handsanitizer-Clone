@@ -69,19 +69,19 @@ function NavHeader(props) {
                 Countries
               </Button>
             </PopoverTrigger>
-            <PopoverContent bg={"white"} p={"25px"}>
+            <PopoverContent bg={"white"} p={"25px"} spacing ={"5px"}>
               <PopoverArrow />
-              <Flex gap="65px">
-                <PopoverHeader>SHIPPING COUNTRY</PopoverHeader>
-                <PopoverCloseButton />
+              <Flex gap="65px" mb={"10px"}>
+                <PopoverHeader fontWeight={"600"} >SHIPPING COUNTRY</PopoverHeader>
+                <PopoverCloseButton bg={"transparent"} border={"none"} />
               </Flex>
-              <PopoverBody>European Union</PopoverBody>
-              <PopoverBody>United Kingdom</PopoverBody>
-              <PopoverBody>USA</PopoverBody>
-              <PopoverBody>Canada</PopoverBody>
-              <PopoverBody>Mexico</PopoverBody>
-              <PopoverBody>Korea</PopoverBody>
-              <PopoverBody>Thailand</PopoverBody>
+              <PopoverBody mb={"5px"}>European Union</PopoverBody>
+              <PopoverBody mb={"5px"}>United Kingdom</PopoverBody>
+              <PopoverBody mb={"5px"}>USA</PopoverBody>
+              <PopoverBody mb={"5px"}>Canada</PopoverBody>
+              <PopoverBody mb={"5px"}>Mexico</PopoverBody>
+              <PopoverBody mb={"5px"}>Korea</PopoverBody>
+              <PopoverBody mb={"5px"}>Thailand</PopoverBody>
             </PopoverContent>
           </Popover>
 
@@ -96,12 +96,12 @@ function NavHeader(props) {
               EN
             </MenuButton>
 
-            <MenuList>
-              <MenuItem>FR</MenuItem>
-              <MenuItem>DE</MenuItem>
-              <MenuItem>IT</MenuItem>
-              <MenuItem>ES</MenuItem>
-              <MenuItem>PT</MenuItem>
+            <MenuList mb={"10px"}>
+              <MenuItem border={"none"} bg={"white"}>FR</MenuItem>
+              <MenuItem border={"none"} bg={"white"}>DE</MenuItem>
+              <MenuItem border={"none"} bg={"white"}>IT</MenuItem>
+              <MenuItem border={"none"} bg={"white"}>ES</MenuItem>
+              <MenuItem border={"none"} bg={"white"}>PT</MenuItem>
             </MenuList>
           </Menu>
 
