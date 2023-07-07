@@ -8,11 +8,11 @@ function Feature({ name, title, dir, description, color, image, btn }) {
   return (
     <Flex flexDir={isSmallScreen ? "column-reverse" : dir ? "row-reverse" : "row"} m="3rem 0rem">
       <Box width={isSmallScreen ? "100%" : "50%"}
-      pb={isSmallScreen&& "20px"}
+      pb={isSmallScreen&& "18px"}
       bg={color} color="white" textAlign="center">
         <Text>{name}</Text>
-        <Heading fontSize="3rem">{title}</Heading>
-        <Text w="60%" m="auto">
+        <Heading fontSize="3.5rem" fontWeight={"500"}>{title}</Heading>
+        <Text w="60%" m="auto" fontSize={"18px"}>
           {description}
         </Text>
 

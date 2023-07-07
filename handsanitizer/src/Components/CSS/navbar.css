@@ -1,4 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:ital,wght@0,100;0,300;0,700;1,300&display=swap');
+
+*{
+
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
 .header{
   position: fixed;
   top: 0;
@@ -14,6 +21,7 @@
   text-decoration: none;
   color: #000000;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .link:hover, .btns:hover{
@@ -23,6 +31,7 @@
   border:none;
    background: none; 
   cursor:pointer;
+  font-weight: 500;
 }
 .menuItems.open {
     width: 100%;
@@ -51,7 +60,7 @@
 
     .toggleButton{
         display: block;
-        top :60px;
+        top :70px;
         position: fixed;
         border: none;
         background: none;

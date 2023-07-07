@@ -8,7 +8,7 @@ function IconPage({ icon, text ,isSingle}) {
       m="11px"
       textAlign="center"
       alignItems="center"
-      w={isSingle ===false &&["30px", "40px", "50px"]}
+      w={isSingle ===false &&["30px", "40px", "60px"]}
     >
       <Box>
         <Image src={icon} maxWidth={["20px", "30px", "40px"]} />

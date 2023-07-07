@@ -16,12 +16,13 @@ import {
   MenuList,
   MenuItem,
   Button,
+  Input,
 } from "@chakra-ui/react";
 
 import {
   faBagShopping,
   faHeart,
-  faMagnifyingGlass,
+  
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/logo_han.webp";
@@ -50,7 +51,12 @@ function NavHeader(props) {
 
       {/* nav header */}
 
-      <Flex justifyContent={ isLeft ? "space-evenly":"space-between"} alignItems={"center"}  padding={"30px"} pb={"0"}>
+      <Flex
+        justifyContent={isLeft ? "space-evenly" : "space-between"}
+        alignItems={"center"}
+        padding={"30px"}
+        pb={"0"}
+      >
         <Flex display={isLeft && "none"}>
           {/* 1st menu */}
           <Popover>
@@ -101,36 +107,35 @@ function NavHeader(props) {
 
           {/* User Account */}
 
-
-          <Link >
-            <FontAwesomeIcon icon={faUser} color="black"/>
+          <Link>
+            <FontAwesomeIcon icon={faUser} color="black" />
           </Link>
         </Flex>
 
-
         {/* Logo */}
-        <Link >
+        <Link>
           <Image src={logo} color="black" width={"150px"} />
         </Link>
 
-
         {/* Right side Search  and Account */}
 
-
-        <Flex alignItems={"center"} gap = "15px">
-
-          <FontAwesomeIcon icon={faMagnifyingGlass} color="black"/>
+        <Flex alignItems={"center"} gap="15px">
+          <Input
+            placeholder="Search..."
+            border={"0"}
+            borderBottom="1px solid black"
+            _focus={{ outline: "none" }}
+            display={isMedia && "none"}
+          />
+          {/* <FontAwesomeIcon icon={faMagnifyingGlass} color="black"/> */}
           <Link>
-            <FontAwesomeIcon icon={faHeart} color="black"/>
+            <FontAwesomeIcon icon={faHeart} color="black" />
           </Link>
 
           <Link>
             <FontAwesomeIcon icon={faBagShopping} color="black" />
           </Link>
-
         </Flex>
-
-
       </Flex>
     </>
   );
