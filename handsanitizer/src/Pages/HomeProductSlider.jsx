@@ -21,32 +21,42 @@ const HomeProductSlider = ({ products, isLoading }) => {
   }
   return (
     <div className="product-carousel">
-       
       <Flex justifyContent={"space-between"} p={"0 2rem"}>
-      <button className="pre-btn" onClick={btnPressPrev}>
-        <p>&lt;</p>
-      </button>
-      <Text fontWeight={"500"}>Gift Sets</Text>
-      <button className="next-btn" onClick={btnPressNext}>
-        <p>&gt;</p>
-      </button>
+        <button className="pre-btn" onClick={btnPressPrev}>
+          <p>&lt;</p>
+        </button>
+        <Text fontWeight={"500"}>Gift Sets</Text>
+        <button className="next-btn" onClick={btnPressNext}>
+          <p>&gt;</p>
+        </button>
       </Flex>
 
       <div className="product-container" ref={productContainerRef}>
         {products.length > 0 &&
           products.map((element, index) => (
-            <div key={index} className="product-item" >
-              <Image src={element.image1} width={"22%"} height={"115px"} pt={"10px"} />
-              <Text fontWeight={"500"}>{element.brand}</Text>
-              <Text>
-                {element.price}{"€ "}
-                <span className="crossed-line">{element.discountedPrice}€</span>
+            <div key={index} className="product-item">
+              <Image src={element.img} width={"98%"} pt={"10px"} />
+              <Text
+                fontWeight={"500"}
+                style={{
+                  color: "black", // Initial color
+                  transition: "color 0.3s", // Transition duration for smooth effect
+                  ":hover": {
+                    color: "red", // Color on hover
+                  },
+                }}
+              >
+                {element.brand.split(" ").slice(0, 3).join(" ")}
               </Text>
-              <button className="button" >Add to cart</button>
+              <Text>
+                {element.MRP}
+                {"€ "}
+                <span className="crossed-line">{element.finalPrice}€</span>
+              </Text>
+              <button className="button">Add to cart</button>
             </div>
           ))}
       </div>
-     
     </div>
   );
 };

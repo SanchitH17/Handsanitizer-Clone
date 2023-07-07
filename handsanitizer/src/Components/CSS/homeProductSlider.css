@@ -24,7 +24,7 @@
 .product-item {
   flex: 0 0 auto;
   width: 200px; 
-  height: 280px;
+  /* height: 280px; */
   text-align: center;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
    padding-bottom: 20px;
@@ -33,7 +33,7 @@
 .product-item:hover{
   border: 1px solid;
     border-radius: 20px;
-
+  background-color: gainsboro;
     cursor: pointer;
 }
 
