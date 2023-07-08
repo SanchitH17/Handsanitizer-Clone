@@ -4,14 +4,7 @@
 .fp:hover{
   color:#b8ddbe;
 }
-.login:hover{
-  background-color: transparent;
-  color:black;
-  z-index: 1;
-  -webkit-tap-highlight-color: initial;
-  display: inline-block;
-  overflow: hidden;
-}
+
 .Social>img{
   width:40px;
   

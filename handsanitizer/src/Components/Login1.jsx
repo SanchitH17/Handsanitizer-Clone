@@ -114,6 +114,7 @@ const Login1 = () => {
                           size="lg"
                           padding="10px"
                           borderRadius="30px"
+                        
                         />
                         <ErrorMessage name="password" component="div" color="#515151" />
                       </FormControl>
@@ -146,8 +147,8 @@ const Login1 = () => {
                         fontSize="15"
                         isLoading={isSubmitting}
                         _hover={{
-                          bg: 'white',
-                          color: 'black',
+                          bg: '#7F7F7F',
+                          color: 'white',
                          transition: 'background-color 0.3s ease-in-out'
                         }}
                       >

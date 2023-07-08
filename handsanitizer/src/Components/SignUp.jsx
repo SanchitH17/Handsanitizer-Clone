@@ -138,15 +138,20 @@ const SignUp = () => {
                   <br />
                   <Button
                     type="submit"
-                    bg="#B8B8B8"
+                    bg="black"
                     border="none"
                     color="white"
                     width="105%"
-                    padding="10px"
+                    padding="12px"
                     borderRadius="30px"
                     size="lg"
                     fontSize="15"
                     cursor="pointer"
+                    _hover={{
+                      bg: '#7F7F7F',
+                      color: 'white',
+                     transition: 'background-color 0.3s ease-in-out'
+                    }}
                   >
                     Create my Account
                   </Button>
