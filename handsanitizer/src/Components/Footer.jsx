@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <>
       <hr />
-      <Box as="footer" bg="gray.200" width={"92%"} margin={"auto"}>
+      <Box as="footer" width={"92%"} margin={"auto"}>
         <Container maxW="container.lg">
           <Flex
             flexDirection={["column", "column", isSmallScreen ? "column" : "row"]}
