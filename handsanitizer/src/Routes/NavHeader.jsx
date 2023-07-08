@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import {
   Popover,
@@ -29,10 +29,20 @@ import logo from "../assets/logo_han.webp";
 import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SearchContext } from "../Pages/SearchContext";
 
 function NavHeader(props) {
   let [isMedia] = useMediaQuery("(max-width: 450px)");
   let [isLeft] = useMediaQuery("(max-width: 750px)");
+
+
+  const { handleSearchChange } = useContext(SearchContext);
+
+  const onSearchChange = (e) => {
+    handleSearchChange(e.target.value);
+  };
+
+
 
   return (
     <>
@@ -126,6 +136,8 @@ function NavHeader(props) {
             borderBottom="1px solid black"
             _focus={{ outline: "none" }}
             display={isMedia && "none"}
+
+            onChange={onSearchChange} 
           />
           {/* <FontAwesomeIcon icon={faMagnifyingGlass} color="black"/> */}
           <Link>

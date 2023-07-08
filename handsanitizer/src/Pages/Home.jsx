@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import axios from "axios";
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import "../Components/CSS/home.css";
 import HomeProductSlider from "./HomeProductSlider";
@@ -20,10 +20,12 @@ import btmIcon2 from "../assets/btmIcon-2.jpg";
 import btmIcon3 from "../assets/btmIcon-3.jpg";
 import btmIcon4 from "../assets/btmIcon-4.jpg";
 import btmIcon5 from "../assets/bmtIcon-5.jpg";
+import { SearchContext } from "./SearchContext";
 
 function Home(props) {
   let [products, setProduct] = useState([]);
   let [isLoading, setLoading] = useState(true);
+  const { searchQuery } = useContext(SearchContext);
 
   useEffect(() => {
     axios
@@ -66,7 +68,9 @@ function Home(props) {
         </Heading>
         <Text> Natural essentials for your daily adventures</Text>
       </Flex>
-      <HomeProductSlider products={products} isLoading={isLoading} />
+
+      {/* Product Slider */}
+      <HomeProductSlider products={products} searchQuery={searchQuery} isLoading={isLoading} />
 
       <Feature
         name="REFILLS"
