@@ -113,10 +113,7 @@ const ProductDetails = () => {
 									</AccordionButton>
 								</h2>
 								<AccordionPanel pb={4}>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-									commodo consequat.
+									Massage into clean skin each morning before make-up. For external use only. Avoid contact with eyes. Keep out of reach of children.
 								</AccordionPanel>
 							</AccordionItem>
 
@@ -130,10 +127,7 @@ const ProductDetails = () => {
 									</AccordionButton>
 								</h2>
 								<AccordionPanel pb={4}>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-									commodo consequat.
+									Free European delivery available for orders over 35€.Peninsular Spain & Portugal shipment cost: 2,00€.1-3 days for delivery.Zone 1 shipment cost: 3,50€. 2-5 days for delivery.Zone 2 shipment cost: 9,00€. 2-5 days for delivery.Zone 3 shipment cost: 19,00€. 2-5 days for deliveryUK shipment cost: 4,50€ 2-5 days for deliveryWe accept credit card (Visa, Mastercard, Maestro, American Express), PayPal, iDEAL, Amazon Pay, Bancontact, Apple Pay & Google Pay.
 								</AccordionPanel>
 							</AccordionItem>
 						</Accordion>
