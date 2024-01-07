@@ -36,18 +36,19 @@ const SignUp = () => {
       firstName,
       lastName,
       email,
-      password
+      password,
+      isLoggedIn: false 
     };
   
-    // Convert user object to JSON string
     const userJSON = JSON.stringify(user);
   
-    // Store the user details in local storage
+  
     localStorage.setItem("user", userJSON);
+    
   
     alert("User signed up successfully!");
-  
-    // Reset the form fields
+    navigate("/login")
+
     setFirstName("");
     setLastName("");
     setEmail("");

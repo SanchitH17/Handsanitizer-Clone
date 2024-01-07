@@ -24,27 +24,25 @@ const Product = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalProd, setTotalProd] = useState(null);
-  const [sortOption, setSortOption] = useState(''); 
-  const [filterOption, setFilterOption] = useState(''); 
+  const [sortOption, setSortOption] = useState('');
+  const [filterOption, setFilterOption] = useState('');
 
   const fetchdata = async () => {
     let apiUrl = `https://sanitizer-5qvt.onrender.com/products?_limit=${limit}&_page=${currentPage}`;
-    
-    // Apply sorting and filtering options to the API URL
+
     if (sortOption === 'priceLowToHigh') {
-      apiUrl += `&_sort=finalPrice`; // Sort by the 'finalPrice' field in ascending order
+      apiUrl += `&_sort=finalPrice`;
     }
     if (sortOption === 'priceHighToLow') {
-      apiUrl += `&_sort=finalPrice&_order=desc`; // Sort by the 'finalPrice' field in descending order
+      apiUrl += `&_sort=finalPrice&_order=desc`;
     }
     if (filterOption) {
-      apiUrl += `&brand=${filterOption}`; 
+      apiUrl += `&brand=${filterOption}`;
     }
-    
+
     const response = await fetch(apiUrl);
-    const data = await response.json();
-    setData(data);
-    console.log(data)
+    const responseData = await response.json();
+    setData(responseData);
     setTotalProd(response.headers.get('X-Total-Count'));
   };
 
@@ -66,10 +64,33 @@ const Product = () => {
     setFilterOption(event.target.value);
   };
 
+  const addToCart = (product) => {
+    
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    
+    const existingProductIndex = existingCart.findIndex(
+      (item) => item.Id === product.Id
+    );
+  
+    if (existingProductIndex !== -1) {
+      
+      existingCart[existingProductIndex].quantity += 1;
+    } else {
+    
+      const updatedCart = [...existingCart, { ...product, quantity: 1 }];
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+  };
+
   return (
     <div>
-      <div style={{display: "flex" ,marginTop: "180px"}}>
-        <Select value={sortOption} onChange={handleSortChange} marginRight={4}>
+      <div style={{ display: 'flex', marginTop: '180px' }}>
+        <Select
+          value={sortOption}
+          onChange={handleSortChange}
+          marginRight={4}
+        >
           <option value=''>Sort By</option>
           <option value='priceLowToHigh'>Price (Low to High)</option>
           <option value='priceHighToLow'>Price (High to Low)</option>
@@ -96,18 +117,18 @@ const Product = () => {
               <CardBody>
                 <Image
                   src={Product.img}
-                  alt='Green double couch with wooden legs'
+                  alt='Product Image'
                   borderRadius='lg'
                 />
                 <Stack mt='6' spacing='3'>
                   <Link to='#' style={{ textDecoration: 'none' }}>
-                    <Heading size='md' >
+                    <Heading size='md'>
                       <Text style={{ fontWeight: '500' }} className='hero'>
                         {Product.brand}
                       </Text>
                     </Heading>
                   </Link>
-                  <Text 
+                  <Text
                     color='blue.600'
                     fontSize='2xl'
                     textDecoration={'line-through'}
@@ -120,12 +141,19 @@ const Product = () => {
                   </Text>
                 </Stack>
               </CardBody>
-              <CardFooter ml={10} >
+              <CardFooter ml={10}>
                 <ButtonGroup spacing='2'>
                   <Button variant='solid' colorScheme='blue'>
                     Buy now
                   </Button>
-                  <Button variant='ghost' colorScheme='blue' onClick={()=>{navigate('/cart');localStorage.setItem("cart", JSON.stringify(Product))}}>
+                  <Button
+                    variant='ghost'
+                    colorScheme='blue'
+                    onClick={() => {
+                      addToCart(Product);
+                      navigate('/cart');
+                    }}
+                  >
                     Add to cart
                   </Button>
                 </ButtonGroup>

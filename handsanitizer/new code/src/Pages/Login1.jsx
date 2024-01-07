@@ -10,34 +10,34 @@ import {useNavigate} from "react-router-dom"
 
 
 const Login1 = () => {
-  // Define validation schema using Yup
+
   const navigate=useNavigate()
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email address').required('*Email is required'),
     password: Yup.string().required('*Password is required')
   });
 
-  // Define initial form values
+ 
   const initialValues = {
     email: '',
     password: ''
   };
 
-  // Handle form submission
   const handleSubmit = (values, { setSubmitting }) => {
-    // Retrieve user details from local storage
+    
     const storedUserJSON = localStorage.getItem('user');
     const storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : null;
 
     if (storedUser && storedUser.email === values.email && storedUser.password === values.password) {
       alert('Login successful!');
-      // Redirect to homepage
+      localStorage.setItem('isLoggedIn', 'true');
+      
       window.location.href = '/';
     } else {
       alert('Invalid email or password');
     }
 
-    // Reset the form
+  
     setSubmitting(false);
   };
 

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "../Components/CSS/home.css"
 import HomeProductSlider from "./HomeProductSlider";
 import Feature from "./Feature";
-import img1 from "../assets/ALALALA.webp";
+ import img1 from "../assets/ALALALA.webp";
 import img2 from "../assets/Pack_completo_2.webp";
 import img3 from "../assets/waterday_mobile-min.webp";
 import IconPage from "./IconPage";
@@ -77,7 +77,7 @@ function Home(props) {
         title="Design meets Sustainability"
         description="Refill and Reuse. Save up to 89% plastic by refilling your favorite products"
         btn="SHOP NOW"
-        color="#ffd54e"
+        color="red"
         image={img1}
         dir={false}
       />
@@ -95,7 +95,7 @@ function Home(props) {
         title="Forget your fear of missing out"
         description="Sign up for our Newsletter and keep an eye on the news all day long"
         btn="SUBSCRIBE NOW"
-        color="#a2b2c8"
+        color="black"
         image={img2}
         dir={true}
       />
@@ -111,7 +111,7 @@ function Home(props) {
         description="Our aim is to eradicate Water Crisis.
         We support clean water projects by creating water wells in developing countries."
         btn="DISCOVER MORE"
-        color="#da8879"
+        color="red"
         image={img3}
         dir={false}
       />
